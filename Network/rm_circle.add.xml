@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2025-08-23 17:40:49 by Eclipse SUMO netedit Version 1.24.0
+<!-- generated on 2025-08-23 18:49:17 by Eclipse SUMO netedit Version 1.24.0
 -->
 
 <additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
     <!-- Detectors -->
-    <entryExitDetector id="ramp_downstream" pos="208.60,95.58" period="300.00" file="e3_0.xml">
-        <detEntry lane="B999B1000_0" pos="4.10"/>
-        <detExit lane="B999B1000_0" pos="27.07"/>
-    </entryExitDetector>
-    <entryExitDetector id="ramp_upstream" pos="185.80,76.41" period="300.00" file="e3_1.xml">
-        <detEntry lane="B999B1000.327.255.27_0" pos="3.55"/>
-        <detExit lane="B999B1000.327.255.27_0" pos="12.76"/>
-    </entryExitDetector>
-    <entryExitDetector id="ramp_inflow" pos="205.52,46.33" period="300.00" file="e3_2.xml">
-        <detEntry lane="E0_0" pos="4.64"/>
-        <detExit lane="E0_0" pos="66.07"/>
+    <inductionLoop id="ramp_downstream" lane="B999B1000_0" pos="13.66" period="5.00" file="e1_1.xml"/>
+    <inductionLoop id="ramp_inflow" lane="E0_0" pos="63.44" period="5.00" file="e1_0.xml"/>
+    <entryExitDetector id="ramp_upstream" pos="161.05,39.85" period="5.00" file="e3_0.xml">
+        <detExit lane="B999B1000.327_0" pos="240.42"/>
+        <detEntry lane="B999B1000.327_0" pos="79.25"/>
     </entryExitDetector>
     <!-- Other additionals -->
     <rerouter id="rr_0" edges="B999B1000.327" pos="181.67,34.64">
@@ -25,8 +19,8 @@
     </rerouter>
     <rerouter id="rr_1" edges="B999B1000" pos="-4.20,109.14">
         <interval begin="0.00" end="1000000000.00">
-            <destProbReroute id="B999B1000.327" probability="0.95"/>
-            <destProbReroute id="E1" probability="0.05"/>
+            <destProbReroute id="B999B1000.327" probability="0.80"/>
+            <destProbReroute id="E1" probability="0.20"/>
         </interval>
     </rerouter>
 </additional>
