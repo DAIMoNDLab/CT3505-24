@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2025-08-23 17:27:07 by Eclipse SUMO netedit Version 1.24.0
+<!-- generated on 2025-08-23 17:44:57 by Eclipse SUMO netedit Version 1.24.0
 <neteditConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/neteditConfiguration.xsd">
 
     <input>
@@ -68,18 +68,27 @@
     <edge id="B999B998" from="B999" to="B998" priority="-1">
         <lane id="B999B998_0" index="0" speed="13.89" length="1.37" shape="197.02,83.60 196.99,83.40"/>
     </edge>
-    <edge id="E0" from="J1" to="B999" priority="5">
-        <lane id="E0_0" index="0" speed="13.89" length="90.20" shape="200.18,-6.09 200.33,82.51"/>
+    <edge id="E0" from="J1" to="ramp_meter" priority="5">
+        <lane id="E0_0" index="0" speed="13.89" length="71.34" shape="200.18,-6.09 200.30,65.25"/>
+    </edge>
+    <edge id="E0.71" from="ramp_meter" to="B999" priority="5">
+        <lane id="E0.71_0" index="0" speed="13.89" length="18.86" shape="200.30,65.25 200.33,82.51"/>
     </edge>
     <edge id="E1" from="J0" to="J2" priority="-1">
         <lane id="E1_0" index="0" speed="13.89" length="109.67" shape="-1.55,99.06 -1.58,-6.66"/>
     </edge>
 
+    <tlLogic id="ramp_meter" type="static" programID="0" offset="0">
+        <phase duration="82" state="G"/>
+        <phase duration="3"  state="y"/>
+        <phase duration="5"  state="r"/>
+    </tlLogic>
+
     <junction id="B998" type="priority" x="198.63" y="83.51" incLanes="B999B998_0 B999B1000.327.255.27_0" intLanes="" shape="195.50,84.18 201.81,83.13 201.76,82.84 195.45,83.88" rightOfWay="edgePriority">
         <request index="0" response="00" foes="00"/>
         <request index="1" response="00" foes="00"/>
     </junction>
-    <junction id="B999" type="priority" x="198.73" y="84.11" incLanes="-B999B1000_0 B998B999_0 E0_0" intLanes="" shape="195.82,86.24 202.15,85.29 201.67,82.28 195.36,83.34">
+    <junction id="B999" type="priority" x="198.73" y="84.11" incLanes="-B999B1000_0 B998B999_0 E0.71_0" intLanes="" shape="195.82,86.24 202.15,85.29 201.67,82.28 195.36,83.34">
         <request index="0" response="000" foes="000"/>
         <request index="1" response="100" foes="100"/>
         <request index="2" response="000" foes="010"/>
@@ -100,6 +109,9 @@
         <request index="0" response="00" foes="00"/>
         <request index="1" response="00" foes="00"/>
     </junction>
+    <junction id="ramp_meter" type="traffic_light" x="198.70" y="65.25" incLanes="E0_0" intLanes="" shape="198.70,65.25 201.90,65.25 198.70,65.25">
+        <request index="0" response="0" foes="0"/>
+    </junction>
 
     <connection from="-B999B1000" to="B999B998" fromLane="0" toLane="0" dir="s" state="M"/>
     <connection from="-B999B1000.327" to="-B999B1000" fromLane="0" toLane="0" dir="s" state="M"/>
@@ -113,6 +125,7 @@
     <connection from="B999B1000.327.255" to="B999B1000.327.255.27" fromLane="0" toLane="0" dir="s" state="M"/>
     <connection from="B999B1000.327.255.27" to="B998B999" fromLane="0" toLane="0" dir="s" state="M"/>
     <connection from="B999B998" to="B998B997" fromLane="0" toLane="0" dir="s" state="M"/>
-    <connection from="E0" to="B999B1000" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="E0" to="E0.71" fromLane="0" toLane="0" tl="ramp_meter" linkIndex="0" dir="s" state="O"/>
+    <connection from="E0.71" to="B999B1000" fromLane="0" toLane="0" dir="s" state="M"/>
 
 </net>
