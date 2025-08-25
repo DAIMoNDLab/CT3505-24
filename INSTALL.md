@@ -17,7 +17,10 @@ Note: these installation steps will be largely based on Visual Studio Code as yo
 - [ ] Install *mercury* by typing the following in the terminal window: pip install mercury
 
 ## Running steps
+### Assignment 1:
 - [ ] In the terminal window, type "mercury run". If everything went smoothly during installation, your browser will open with a new window. Have fun!
+### Assignment 2:
+- [ ] Open the Jupyter notebook in Visual Studio Code and run it as-is, clickign on "Run all" up top.
 
 
 ## FAQs:
